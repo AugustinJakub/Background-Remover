@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <Target Name="CopyNativeDlls" AfterTargets="Build">
+    <Message Text="Copying native DLLs to output directory..." Importance="high" />
+    <Copy SourceFiles="..\x64\$(Configuration)\GreenBeGoneASM.dll" DestinationFolder="$(OutDir)" ContinueOnError="true" />
+    <Copy SourceFiles="..\x64\$(Configuration)\GreenBeGoneCPP.dll" DestinationFolder="$(OutDir)" ContinueOnError="true" />
+  </Target>
+
+</Project>

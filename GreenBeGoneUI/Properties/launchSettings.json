@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GreenBeGoneUI": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

@@ -1,0 +1,230 @@
+﻿<Page x:Class="GreenBeGoneUI.MainAppPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      Title="MainAppPage"
+      Background="{StaticResource BrushCharcoal}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/> <!-- Sidebar -->
+            <ColumnDefinition Width="*"/>   <!-- Content -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <StackPanel Grid.Column="0" Margin="20,40,20,20">
+            <!-- App Title Small -->
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,40">
+                <TextBlock Text="ByeBye" FontFamily="Georgia" FontSize="32" Foreground="{StaticResource BrushWhite}"/>
+                <TextBlock Text="Green" FontFamily="Georgia" FontSize="32" Foreground="{StaticResource BrushEmerald}"/>
+                <Path Fill="{StaticResource BrushEmerald}" Stretch="Uniform" Data="M6,0 L7.2,4.8 L12,6 L7.2,7.2 L6,12 L4.8,7.2 L0,6 L4.8,4.8 Z" Width="24" Height="24" Margin="10,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <RadioButton Name="TabSource" GroupName="Tabs" Style="{StaticResource SidebarTab}" IsChecked="True" Checked="Tab_Checked">
+                <RadioButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Path Fill="{StaticResource BrushEmerald}" Data="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" Width="20" Height="20" Stretch="Uniform" Margin="0,0,15,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="Source Media" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </RadioButton.Content>
+            </RadioButton>
+
+            <RadioButton Name="TabKeying" GroupName="Tabs" Style="{StaticResource SidebarTab}" Checked="Tab_Checked">
+                <RadioButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Path Fill="{StaticResource BrushEmerald}" Data="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" Width="20" Height="20" Stretch="Uniform" Margin="0,0,15,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="Keying Settings" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </RadioButton.Content>
+            </RadioButton>
+
+            <RadioButton Name="TabPerformance" GroupName="Tabs" Style="{StaticResource SidebarTab}" Checked="Tab_Checked">
+                <RadioButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Path Fill="{StaticResource BrushEmerald}" Data="M7 2v11h3v9l7-12h-4l4-8z" Width="14" Height="20" Stretch="Uniform" Margin="3,0,18,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="Performance" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </RadioButton.Content>
+            </RadioButton>
+
+            <RadioButton Name="TabPreview" GroupName="Tabs" Style="{StaticResource SidebarTab}" Checked="Tab_Checked">
+                <RadioButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Path Fill="{StaticResource BrushEmerald}" Data="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" Width="20" Height="20" Stretch="Uniform" Margin="0,0,15,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="Preview Result" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </RadioButton.Content>
+            </RadioButton>
+
+            <RadioButton Name="TabExport" GroupName="Tabs" Style="{StaticResource SidebarTab}" Checked="Tab_Checked">
+                <RadioButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Path Fill="{StaticResource BrushEmerald}" Data="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z" Width="18" Height="20" Stretch="Uniform" Margin="1,0,16,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="Export" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </RadioButton.Content>
+            </RadioButton>
+
+            <!-- Status Pill -->
+            <Border Background="{StaticResource BrushLighterCharcoal}" CornerRadius="12" Padding="15" Margin="0,40,0,0" VerticalAlignment="Bottom">
+               <StackPanel>
+                   <TextBlock Text="STATUS" Foreground="{StaticResource BrushGray}" FontSize="10" FontWeight="Bold" Margin="0,0,0,5"/>
+                   <TextBlock Name="TxtStatus" Text="Ready" Foreground="{StaticResource BrushEmerald}" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="12"/>    
+               </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <!-- Main Content Area (Floating Card) -->
+        <Border Grid.Column="1" Background="{StaticResource BrushLighterCharcoal}" CornerRadius="24" Margin="0,20,20,20" Padding="40">
+            <Grid>
+                <!-- Source Tab -->
+                <Grid Name="GridSource" Visibility="Visible">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="Upload Source" Style="{StaticResource TitleSerif}" Foreground="{StaticResource BrushWhite}" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <TextBlock Text="Drag and drop or select an image to begin processing." Style="{StaticResource BodySans}" HorizontalAlignment="Center" Margin="0,0,0,40"/>
+
+                        <Button Content="Select Image File" Name="BtnLoad" Click="BtnLoad_Click" Style="{StaticResource PrimaryButton}" Width="200"/>
+                        <TextBlock Text="Supports PNG, JPG, BMP" Style="{StaticResource BodySans}" FontSize="12" HorizontalAlignment="Center" Margin="0,15,0,0"/>   
+                    </StackPanel>
+                </Grid>
+
+                <!-- Keying Tab -->
+                <Grid Name="GridKeying" Visibility="Hidden">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <TextBlock Text="Keying Parameters" Style="{StaticResource TitleSerif}" Margin="0,0,0,30"/>
+
+                        <!-- Key Color Section -->
+                        <TextBlock Text="Key Color" Style="{StaticResource BodySans}" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,30">
+                            <!-- RGB Values Box -->
+                            <Border Background="{StaticResource BrushCharcoal}" CornerRadius="8" Padding="10" Width="160" Height="45" Margin="0,0,15,0">
+                                <TextBlock Name="TxtKeyColorRGB" Text="R:0 G:255 B:0" Foreground="{StaticResource BrushWhite}" FontSize="14" FontWeight="Bold" FontFamily="Segoe UI" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                            <!-- Color Swatch -->
+                            <Border Name="ColorPreviewBorder" Width="45" Height="45" CornerRadius="8" Background="#00FF00" BorderBrush="#555555" BorderThickness="1" ToolTip="Selected Color"/>
+                        </StackPanel>
+
+                        <TextBlock Text="Color Tolerance" Style="{StaticResource BodySans}" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                        <Border Background="{StaticResource BrushCharcoal}" CornerRadius="8" Padding="10" Width="150" HorizontalAlignment="Left" Margin="0,0,0,30">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox Name="TxtTolerance" Text="50" Width="80" Background="Transparent" BorderThickness="0" Foreground="{StaticResource BrushWhite}" FontSize="16" FontFamily="Segoe UI" VerticalAlignment="Center"/>
+                                <TextBlock Text="/ 255" Foreground="{StaticResource BrushGray}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- Picker Image -->
+                    <Border Grid.Column="1" CornerRadius="12" ClipToBounds="True" Background="{StaticResource BrushCharcoal}" Margin="20,0,0,0">
+                        <Grid>
+                            <Image Name="ImgColorPicker" Stretch="Uniform" MouseLeftButtonDown="ImgColorPicker_MouseLeftButtonDown" Cursor="Hand"/>
+                            <TextBlock Text="Tip: Click image to pick color" Foreground="#AAFFFFFF" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20" FontSize="12" FontWeight="SemiBold" IsHitTestVisible="False">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect ShadowDepth="1" BlurRadius="2" Opacity="0.8"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+                <!-- Performance Tab -->
+                <Grid Name="GridPerformance" Visibility="Hidden">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="Performance" Style="{StaticResource TitleSerif}" HorizontalAlignment="Center" Margin="0,0,0,30"/>
+
+                        <Border Background="{StaticResource BrushCharcoal}" CornerRadius="16" Padding="30" Width="450" HorizontalAlignment="Left" Margin="0,0,0,30">
+                             <StackPanel>
+                                <TextBlock Text="Processing Algorithm" Style="{StaticResource BodySans}" FontWeight="SemiBold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,30" HorizontalAlignment="Center">
+                                    <RadioButton Content="Standard C++" Name="RbHll" IsChecked="True" Style="{StaticResource OptionRadioButton}"/>
+                                    <RadioButton Content="Optimized Assembly (ASM)" Name="RbAsm" Style="{StaticResource OptionRadioButton}"/>
+                                </StackPanel>
+
+                                <TextBlock Text="Active Threads" Style="{StaticResource BodySans}" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Grid Width="300" Margin="0,0,20,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>        
+                                            <RowDefinition Height="Auto"/>        
+                                        </Grid.RowDefinitions>
+
+                                        <Slider Grid.Row="0" Name="SliderThreadCount" Minimum="1" Maximum="64" Value="1"
+                                                TickPlacement="BottomRight"       
+                                                IsSnapToTickEnabled="True" TickFrequency="1"
+                                                AutoToolTipPlacement="TopLeft"/>  
+
+                                        <Grid Grid.Row="1" Margin="0,5,0,0">      
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="7*"/>
+                                                <ColumnDefinition Width="8*"/>
+                                                <ColumnDefinition Width="16*"/>
+                                                <ColumnDefinition Width="32*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <TextBlock Text="1" Grid.Column="0" HorizontalAlignment="Center" FontSize="10" Foreground="{StaticResource BrushGray}"/>  
+                                            <TextBlock Text="8" Grid.Column="1" HorizontalAlignment="Right" FontSize="10" Foreground="{StaticResource BrushGray}" Margin="0,0,-3,0"/>
+                                            <TextBlock Text="16" Grid.Column="2" HorizontalAlignment="Right" FontSize="10" Foreground="{StaticResource BrushGray}" Margin="0,0,-6,0"/>
+                                            <TextBlock Text="32" Grid.Column="3" HorizontalAlignment="Right" FontSize="10" Foreground="{StaticResource BrushGray}" Margin="0,0,-6,0"/>
+                                            <TextBlock Text="64" Grid.Column="4" HorizontalAlignment="Right" FontSize="10" Foreground="{StaticResource BrushGray}" Margin="0,0,-6,0"/>
+                                        </Grid>
+                                    </Grid>
+
+                                    <TextBlock Text="{Binding ElementName=SliderThreadCount, Path=Value, StringFormat=N0}"
+                                               Foreground="{StaticResource BrushEmerald}" FontSize="24" FontWeight="Bold" FontFamily="Segoe UI"
+                                               VerticalAlignment="Top" Width="40" TextAlignment="Right"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Button Content="Apply Processing" Name="BtnProcess" Click="BtnProcess_Click" Style="{StaticResource PrimaryButton}" Width="250" Margin="0,30,0,0"/>
+
+                        <TextBlock Name="TxtExecutionTime" Text="Last Run: 0 ms" Style="{StaticResource BodySans}" FontSize="18" HorizontalAlignment="Center" Margin="0,30,0,0"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Preview Tab -->
+                <Grid Name="GridPreview" Visibility="Hidden">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Result Preview" Style="{StaticResource TitleSerif}" Margin="0,0,0,20"/>
+                    <Border Grid.Row="1" CornerRadius="12" ClipToBounds="True" Background="{StaticResource BrushCharcoal}">
+                         <Image Name="ProcessedImage" Stretch="Uniform"/>
+                    </Border>
+                </Grid>
+
+                <!-- Export Tab -->
+                <Grid Name="GridExport" Visibility="Hidden">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="Export Result" Style="{StaticResource TitleSerif}" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                        <TextBlock Text="Save your processed image with transparency." Style="{StaticResource BodySans}" HorizontalAlignment="Center" Margin="0,0,0,40"/>
+
+                        <Button Content="Save to Disk (PNG)" Name="BtnSave" Click="BtnSave_Click" Style="{StaticResource PrimaryButton}" Width="250"/>
+                        
+                        <TextBlock Text="Result will be saved as a high-quality PNG file." Style="{StaticResource BodySans}" FontSize="12" Foreground="{StaticResource BrushGray}" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <!-- Custom Success Overlay -->
+        <Grid Name="OverlaySuccess" Grid.ColumnSpan="2" Visibility="Collapsed" Panel.ZIndex="999">
+            <Border Background="Black" Opacity="0.6"/>
+            <Border Background="{StaticResource BrushLighterCharcoal}" CornerRadius="16" Width="350" Height="200" Padding="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Path Fill="{StaticResource BrushEmerald}" Data="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" Width="40" Height="40" Stretch="Uniform" Margin="0,0,0,15"/>
+                    <TextBlock Text="Success!" Foreground="{StaticResource BrushEmerald}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+                    <TextBlock Text="Image saved successfully." Foreground="White" FontSize="14" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,20"/>
+                    <Button Content="OK" Click="BtnCloseOverlay_Click" Style="{StaticResource PrimaryButton}" Width="100" Height="35"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

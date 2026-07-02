@@ -1,4 +1,4 @@
-# 🟢 ByeByeGreen - High-Performance Chroma Key Remover
+# <img width="269" height="66" alt="logo_green" src="https://github.com/user-attachments/assets/636e81d5-d2b7-4609-93df-479fed094fe1" />
 
 **ByeByeGreen** is a multi-threaded image processing app I built for the **x64 architecture**. The main goal of this project was to write and benchmark a green screen (chroma-key) removal algorithm using two different approaches: a standard **C++ object-oriented implementation** and a low-level **Assembly (ASM) SIMD-optimized implementation** to see which performs better.
 
